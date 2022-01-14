@@ -1,0 +1,23 @@
+.messeageSvg {
+  margin: 0 0 50px 0;
+}
+.st0 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 1;
+  stroke-miterlimit: 50;
+  stroke-dasharray: 1989;
+  stroke-dashoffset: 1989;
+  animation: strokeAnimation 20s linear 0s infinite;
+}
+@keyframes strokeAnimation {
+  0% {
+    stroke-dashoffset: 1989;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

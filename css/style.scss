@@ -1,0 +1,515 @@
+/* 
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Fugaz One', cursive;
+ */
+
+$fontSize:20px;
+
+html,body{
+    height: 100%;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+h2{
+    font-size: $fontSize*2.5;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #555;
+}
+
+/* -----------------------------
+    ヘッダー
+----------------------------- */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    position: fixed;
+    top: 0;
+
+    h1{
+        width: 8%;
+        margin: auto 30px;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        li{
+            margin-left: 20px;
+            width: fit-content;
+            padding: 8px 15px;
+            background-color: #41BFD6;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 0 #246a77;
+
+            &:active{
+                position: relative;
+                top: 5px;
+                box-shadow: none;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* -----------------------------
+    モーダル
+----------------------------- */
+
+.modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .modal_back{
+        background-color: rgba($color: #000000, $alpha: 0.4);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .modal_contents{
+        width: 40%;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 30px;
+        
+        .modal_item{
+            width: 70%;
+
+            h2{
+                margin-bottom: 30px;
+                font-size: $fontSize*1.5;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            h3{
+                margin-bottom: 10px;
+                font-size: $fontSize*0.8;
+            }
+
+            input{
+                border: 1px solid rgb(189, 189, 189);
+                border-radius: 2px;
+                width: 100%;
+                height: 30px;
+                margin-bottom: 30px;
+                box-shadow: 0px 0px 5px 1px rgb(199, 199, 199) inset;
+            }
+
+            button{
+                display: block;
+                width: fit-content;
+                padding: 10px 20px;
+                background-color: #41BFD6;
+                color: #fff;
+                border-radius: 10px;
+                margin: 0px auto 20px;
+            }
+
+            .login{
+                margin-top: 10px;
+                text-align: center;
+                margin-bottom: 8px;
+                font-size: $fontSize*0.7;
+
+                span{
+                    color: blueviolet;
+                }
+            }
+
+        }
+    }
+}
+
+/* モーダルを隠す */
+.signUpFadeOut ,.logInFadeOut{
+    display: none;
+}
+
+
+
+/* -----------------------------
+    スライドショー
+----------------------------- */
+
+#slider_contain{
+    width: 100%;
+    height: 100%;
+}
+
+/* -----------------------------
+    コンテンツ　紹介
+----------------------------- */
+
+section:nth-of-type(1){
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 150px;
+
+    .introduction{
+        width: 960px;
+        height: 80%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 80px;
+
+        h2{
+            margin-bottom: 50px;
+        }
+
+        p{
+            font-size: $fontSize;
+            font-weight: 200;
+            line-height: 200%;
+            letter-spacing: 3px;
+        }
+
+        .introduction_contents{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+
+            p{
+                width: calc(33.3% - 15px);
+                margin: 0 30px;
+                border: 1px solid #aaa;
+                border-radius: 10px;
+                padding: 30px 30px;
+                box-sizing: border-box;
+                font-size: $fontSize;
+                font-weight: 700;
+                position: relative;
+
+                img{
+                    width: 150px;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                }
+
+                span{
+                    font-family: 'Fugaz One', cursive;
+                    color: #d6d341;
+                    font-kerning: normal;
+                    font-size: $fontSize*1.5;
+                    display: block;
+                    width: fit-content;
+                    position: absolute;
+                    top: -15px;
+                    left: -30px;
+                    transform: rotate(-15deg);
+                }
+            }
+        }
+    }
+}
+
+/* -----------------------------
+    コンテンツ　科目コース
+----------------------------- */
+
+section:nth-of-type(2){
+    height: 150%;
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .course{
+        width: 960px;
+        background-color: #fff;
+        padding: 80px;
+        border-radius: 20px;
+
+
+        h2{
+            line-height: 1.5;
+            font-size: $fontSize*2;
+        }
+
+        & > p{
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        .course_contents{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p{
+                width: calc(33.3% - 30px);
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                background-color: #eee;
+                font-size: $fontSize;
+
+                img{
+                    display: block;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+/* -----------------------------
+    よくある問い合わせ
+----------------------------- */
+
+section:nth-of-type(3){
+    width: 960px;
+    margin: 200px auto;
+
+    h2{
+        text-align: center;
+    }
+
+    dl{
+        font-size: $fontSize;
+
+        dt{
+            margin-bottom: $fontSize;
+
+            &::before{
+                content: "Q.";
+                font-size: $fontSize*1.5;
+                color: blue;
+            }
+        }
+
+        dd{
+            /* display: none; */
+            margin-bottom: $fontSize*3;
+            line-height: 1.5;
+
+            &::before{
+                content: "A.";
+                font-size: $fontSize*1.5;
+                color: red;
+            }
+        }
+    }
+}
+
+/* -----------------------------
+    オンライン面談
+----------------------------- */
+
+section:nth-of-type(4){
+    background-image: url(../img/callcenter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .online_contents{
+        width: 960px;
+        padding: 100px 0;
+        margin: 0 auto;
+        text-align: center;
+        background-color: rgba($color: #fff, $alpha: 0.7);
+        border-radius: 20px;
+
+        h2{
+            margin-bottom: 50px;
+        }
+
+        p{
+            font-size: $fontSize;
+            line-height: 2;
+            margin-bottom: 50px;
+        }
+
+        p:nth-of-type(2){
+            width: fit-content;
+            padding: 8px 15px;
+            margin: 0 auto;
+            background-color: #41BFD6;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 0 #246a77;
+
+            &:active{
+                position: relative;
+                top: 5px;
+                box-shadow: none;
+            }
+        }
+
+    }
+}
+
+/* -----------------------------
+    会員登録
+----------------------------- */
+
+section:nth-of-type(5){
+    width: 960px;
+    margin: 150px auto;
+    text-align: center;
+
+    .registration{
+        border: 1px solid #aaa;
+        border-radius: 20px;
+
+        h2{
+            margin-bottom: 50px;
+            background-color: #fff;
+            padding: 0 30px;
+            position: relative;
+            top: -30px;
+            width: fit-content;
+            margin: 0 auto 30px;
+        }
+
+        p{
+            font-size: $fontSize;
+            line-height: 2;
+            margin-bottom: 50px;
+        }
+
+        p:nth-of-type(2){
+            width: fit-content;
+            padding: 8px 15px;
+            margin: 0 auto;
+            background-color: #41BFD6;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 0 #246a77;
+            margin-bottom: 70px;
+
+            &:active{
+                position: relative;
+                top: 5px;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+/* -----------------------------
+    フッター
+----------------------------- */
+
+footer{
+    background-color: #222;
+    color: #fff;
+    padding: 40px 0 40px ;
+
+    .footer_contents{
+        width: 960px;
+        margin:  auto;
+        display: flex;
+        justify-content: space-between;
+
+
+        .item1{
+            margin-bottom: 20px;
+        }
+    }
+
+    ul{
+        display: flex;
+        margin-bottom: 20px;
+
+        li{
+            margin-right: 20px;
+            font-size: $fontSize*0.65;
+            font-weight: 100;
+        }
+    }
+
+    input{
+        width: 180px;
+        height: 30px;
+        background-color: #fff;
+        border: 1px solid rgb(189, 189, 189);
+        border-radius: 2px;
+        box-shadow: 0px 0px 5px 1px rgb(199, 199, 199) inset;
+        color: #555;
+        padding: 10px;
+        margin-right: 20px;
+        font-size: $fontSize*0.5;
+
+        &::after{
+            content: url(../img/search.png);
+            background-color: #fff;
+            display: inline-block;
+            width: 50px;
+        }
+    }
+
+    small{
+        display: block;
+        font-size: $fontSize*0.8;
+        text-align: center;
+    }
+
+}
+
+/* -----------------------------
+    トップへ戻るボタン
+----------------------------- */
+
+#scrollbtn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    p{
+        color: #fff;
+        font-weight: 500;
+
+        a{
+            background-color: #246a77;
+            display: block;
+            width: 80px;
+            padding: 20px 0;
+            text-align: center;
+            line-height: 150%;
+            border-radius: 10px;
+        }
+    }
+}

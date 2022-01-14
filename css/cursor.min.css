@@ -1,0 +1,43 @@
+body {
+  cursor: none;
+}
+*:hover {
+  cursor: none;
+}
+#cursor {
+  position: fixed;
+  /* background: #41bfd5; */
+  background: rgb(36, 106, 119);
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  margin: -10px 0 0 -10px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+}
+#stalker {
+  position: fixed;
+  /* background: #8080ff; */
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid #8080ff;
+  margin: -35px 0 0 -35px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+#cursor.active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+#stalker.active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+/*# sourceMappingURL=mouse.min.css.map */
