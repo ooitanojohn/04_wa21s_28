@@ -1,25 +1,38 @@
 // jquery
 $(function () {
-  // scrollLink
-  // スクロールが100pxの位置に達したらscrollを消す
   $(window).on("scroll", () => {
+    // 各 sectionの内容をスクロールでfade on off
+    if ($(this).scrollTop() > 1000) {
+      $(".introduction > .slide-top").fadeOut(1000);
+    } else {
+      $(".introduction > .slide-top").fadeIn(1000);
+    }
+    // scrollLink
+    // スクロールによって表示を変更
     if ($(this).scrollTop() > 300) {
       $(".scrolldown span").text("Next. Page");
-      // $(".scrolldown").fadeOut(1000);
     } else {
       $(".scrolldown span").text("Click.Scroll");
-      // $(".scrolldown").fadeIn(1000);
     }
   });
-  // トップダウンを押すと動的にトップへ移動
+  // scrollLinkを押すと動的にnextへ移動
   $("#contentsSlider").on("click", () => {
+    if ($(this).scrollTop() < 300) {
+      var scrollHeight = 1400;
+    } else if ($(this).scrollTop() < 1400) {
+      var scrollHeight = 2200;
+    } else if ($(this).scrollTop() < 2300) {
+      var scrollHeight = 3100;
+    } else if ($(this).scrollTop() < 3200) {
+      var scrollHeight = 4000;
+    }
     $("body,html").animate(
       {
-        scrollTop: 1300,
+        scrollTop: scrollHeight,
       },
       1000
     );
-    // 親要素への影響をなくす
+    console.log(1);
     return false;
   });
   // fixedLink
@@ -43,9 +56,7 @@ $(function () {
     // 親要素への影響をなくす
     return false;
   });
-  /**
-   * 「 slick 」
-   */
+  // slickImg
   $(".slider").slick({
     dots: true,
     autoplay: true,

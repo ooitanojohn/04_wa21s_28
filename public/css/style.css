@@ -176,13 +176,16 @@ header ul li:hover {
 /* -----------------------------
     コンテンツ　紹介
 ----------------------------- */
+section{
+  width:80%;
+}
 section:nth-of-type(1) {
   height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 0 150px;
+  margin: 150px auto 300px 0;
 }
 
 section:nth-of-type(1) .introduction {
@@ -246,6 +249,8 @@ section:nth-of-type(1) .introduction .introduction_contents p span {
     コンテンツ　科目コース
 ----------------------------- */
 section:nth-of-type(2) {
+  /* add */
+  margin:0 0 0 auto;
   height: 150%;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
